@@ -28,7 +28,7 @@
 <main class="login-form" style="height: 100vh;background: #262626;color: red">
     <div class="cotainer d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="row desktop_login"
-             style="background: black;padding: 40px;border-radius: 15px;box-shadow: white 0px 0px 10px">
+             style="background: black;padding: 40px;border-radius: 15px;box-shadow: black 0px 0px 20px 5px">
             <h1 class="text-center mb-3">Login</h1>
             <form method="POST" action="{{ route('login.custom') }}">
                 @csrf
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <div class="checkbox">
+                    <div class="checkbox" style="text-align: center">
                         <label>
                             <input type="checkbox" name="remember"> Remember Me
                         </label>
