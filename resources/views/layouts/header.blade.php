@@ -9,30 +9,37 @@
     <title></title>
     <style>
         .navigation li a {
-            color: #ff2d20;
+            color: cyan;
             text-decoration: none;
-            box-shadow: inset 0 0 white;
+            box-shadow: inset 0 0 cyan;
             padding: 7px 15px;
-            transition: box-shadow ease-in-out .5s;
+            transition: all ease-in-out .5s;
             border-radius: 7px;
         }
 
         .navigation li a:hover {
-            box-shadow: inset 0 -80px white;
+            box-shadow: inset 0 -80px cyan;
+            color: black;
         }
 
         .desktop_nav .div a {
-            color: #ff2d20;
+            color: cyan;
             text-decoration: none;
-            box-shadow: inset 0 0 white;
+            box-shadow: inset 0 0 cyan;
             padding: 7px 15px;
-            transition: box-shadow ease-in-out .5s;
+            transition: all ease-in-out .5s;
             align-items: center;
             border-radius: 7px;
         }
 
+        .form-control::placeholder {
+            color: cyan;
+            opacity: 1; /* Firefox */
+        }
+
         .desktop_nav .div a:hover {
-            box-shadow: inset 0px -80px white;
+            box-shadow: inset 0px -80px cyan;
+            color: black;
         }
 
         body {
@@ -81,7 +88,7 @@
             display: flex;
             text-align: right;
             font-family: "Helvetica";
-            color: red;
+            color: cyan;
             font-weight: bold;
         }
 
@@ -91,7 +98,7 @@
         }
 
         .mobile_nav .mobile_nav_content svg {
-            fill: red;
+            fill: cyan;
         }
 
         .navigation_mobile {
@@ -113,7 +120,7 @@
 
         .navigation_mobile li a {
             font-family: "Helvetica";
-            color: red;
+            color: cyan;
             font-weight: bold;
             text-decoration: none;
             padding: 5px;
@@ -126,7 +133,7 @@
 
         .form-control{
             background: black;
-            color: red;
+            color: cyan;
             border: 1px solid white;
             padding: 10px;
             outline: none;
@@ -136,7 +143,7 @@
         }
 
         .btn{
-            color: red;
+            color: cyan;
             background: black;
             padding: 10px 20px;
             border: 0;
@@ -154,14 +161,20 @@
             display: flex !important;
         }
 
+        .fc .fc-button-primary{
+            color: cyan;
+        }
+
         .fc .fc-button-primary, .fc .fc-button-primary:disabled{
             background: black;
             border-color: black;
+            color: cyan;
         }
 
         .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active{
-            background: rgb(255,0,0);
-            border-color: rgb(255,0,0);
+            background: cyan;
+            border-color: cyan;
+            color: black;
         }
 
         .fc .fc-button-primary:focus{
@@ -173,8 +186,9 @@
         }
 
         .fc .fc-button-primary:hover{
-            background: rgb(255,0,0);
-            border-color: rgb(255,0,0);
+            background: cyan;
+            border-color: cyan;
+            color: black;
         }
 
         @media screen and (max-width: 992px) {
