@@ -30,9 +30,9 @@
         <input type="hidden" name="ucast" value="0">
     </form>
 @else
-<?php if($ucastnik == "neni") {
-    }else{?>
-    <?php if (!empty($ucastnik) && $ucastnik->ucast == 0){ ?>
+        <?php if ($ucastnik == "neni") {
+    }else{ ?>
+        <?php if (!empty($ucastnik) && $ucastnik->ucast == 0){ ?>
     <p style="color:#FF0000FF">Succesfuly non-attendance</p>
     <form action="/ucast_update" method="post">
         @csrf
@@ -52,7 +52,7 @@
     </form>
 
     <?php }
-    }?>
+    } ?>
 
 @endif
 
@@ -82,8 +82,8 @@
 
     @else
         <tr>
-            <td>Bez účastníků</td>
-            <td>-</td>
+            <td colspan="2">Bez účastníků</td>
+
         </tr>
     @endif
 </table>

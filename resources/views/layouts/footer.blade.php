@@ -1,5 +1,5 @@
 </div>
-<div style="background: black;color: white;text-align: center; padding: 15px;">
+<div style="background: black;color: white;text-align: center; padding: 25px;">
     &#169; {{ date('Y') }}
 </div>
 <script>

@@ -154,7 +154,28 @@
             display: flex !important;
         }
 
+        .fc .fc-button-primary, .fc .fc-button-primary:disabled{
+            background: black;
+            border-color: black;
+        }
 
+        .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active{
+            background: rgb(255,0,0);
+            border-color: rgb(255,0,0);
+        }
+
+        .fc .fc-button-primary:focus{
+            box-shadow: none;
+        }
+
+        .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus{
+            box-shadow: none;
+        }
+
+        .fc .fc-button-primary:hover{
+            background: rgb(255,0,0);
+            border-color: rgb(255,0,0);
+        }
 
         @media screen and (max-width: 992px) {
             .desktop_nav {
