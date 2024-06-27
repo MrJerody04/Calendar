@@ -4,11 +4,12 @@
 </div>
 <script>
     var clicked = 0;
+
     function mobile_hamburger() {
-        if(clicked == 0) {
+        if (clicked == 0) {
             document.getElementById("mobile_nav").classList.add('flex');
             clicked = 1;
-        }else{
+        } else {
             document.getElementById("mobile_nav").classList.remove('flex');
             clicked = 0;
         }

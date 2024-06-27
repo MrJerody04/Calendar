@@ -8,6 +8,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title></title>
     <style>
+
+        * {
+            font-family: Helvetica;
+        }
+
         .navigation li a {
             color: cyan;
             text-decoration: none;
@@ -131,7 +136,7 @@
         }
 
 
-        .form-control{
+        .form-control {
             background: black;
             color: cyan;
             border: 1px solid white;
@@ -142,7 +147,7 @@
             border-radius: 15px;
         }
 
-        .btn{
+        .btn {
             color: cyan;
             background: black;
             padding: 10px 20px;
@@ -151,9 +156,15 @@
             cursor: pointer;
             border-radius: 15px;
             display: inline-block;
+            font-weight: bold;
         }
 
-        .btn-group{
+        .btn:hover {
+            color: black;
+            background: cyan;
+        }
+
+        .btn-group {
             margin: 2px 0;
         }
 
@@ -161,31 +172,31 @@
             display: flex !important;
         }
 
-        .fc .fc-button-primary{
+        .fc .fc-button-primary {
             color: cyan;
         }
 
-        .fc .fc-button-primary, .fc .fc-button-primary:disabled{
+        .fc .fc-button-primary, .fc .fc-button-primary:disabled {
             background: black;
             border-color: black;
             color: cyan;
         }
 
-        .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active{
+        .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
             background: cyan;
             border-color: cyan;
             color: black;
         }
 
-        .fc .fc-button-primary:focus{
+        .fc .fc-button-primary:focus {
             box-shadow: none;
         }
 
-        .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus{
+        .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus {
             box-shadow: none;
         }
 
-        .fc .fc-button-primary:hover{
+        .fc .fc-button-primary:hover {
             background: cyan;
             border-color: cyan;
             color: black;
@@ -195,10 +206,12 @@
             .desktop_nav {
                 display: flex;
             }
+
             .mobile_nav {
                 display: none;
             }
-            .fc .fc-toolbar.fc-header-toolbar{
+
+            .fc .fc-toolbar.fc-header-toolbar {
                 display: flex;
                 flex-wrap: wrap !important;
                 justify-content: center !important;
@@ -210,6 +223,7 @@
             .desktop_nav {
                 display: none;
             }
+
             .mobile_nav {
                 display: flex;
                 flex-direction: column;

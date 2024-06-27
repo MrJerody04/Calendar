@@ -64,10 +64,10 @@ class ScheduleController extends Controller
         $matchThese = ['schedule_id' => $request->schedule_id, 'user_id' => $request->user_id];
         $text = "";
 
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
             $text = "fail";
 
-        }else{
+        } else {
             DB::table('schedule_user')->insert([
                 'user_id' => $request->user_id,
                 'schedule_id' => $request->schedule_id,
@@ -78,14 +78,14 @@ class ScheduleController extends Controller
 
         $ucast = DB::table('schedule_user')->where('schedule_id', '=', $request->schedule_id)->get();
 
-        foreach ($ucast as $u){
-            $test[] = DB::table('users')->where('id','=', $u->user_id)->get();
+        foreach ($ucast as $u) {
+            $test[] = DB::table('users')->where('id', '=', $u->user_id)->get();
         }
 
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
             $already = true;
             $ucastnik = DB::table('schedule_user')->where($matchThese)->first();
-        }else{
+        } else {
             $already = false;
             $ucastnik = "neni";
         }
@@ -94,24 +94,25 @@ class ScheduleController extends Controller
 
         $userId = Auth::id();
 
-        return view("event_detail")->with('schedule', $request->schedule_id)->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('text', $text)->with('already',$already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
+        return view("event_detail")->with('schedule', $request->schedule_id)->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('text', $text)->with('already', $already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
     }
 
-    public function ucast_update(Request $request){
+    public function ucast_update(Request $request)
+    {
         $matchThese = ['schedule_id' => $request->schedule_id, 'user_id' => $request->user_id];
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
-            $update = array('ucast'=>$request->ucast);
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
+            $update = array('ucast' => $request->ucast);
             DB::table('schedule_user')->where($matchThese)->limit(1)->update($update);
             $ucastnik = DB::table('schedule_user')->where($matchThese)->first();
-        }else{
+        } else {
             $ucastnik = "neni";
         }
 
         $text = "";
 
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
             $text = "fail";
-        }else{
+        } else {
             DB::table('schedule_user')->insert([
                 'user_id' => $request->user_id,
                 'schedule_id' => $request->schedule_id,
@@ -122,13 +123,13 @@ class ScheduleController extends Controller
 
         $ucast = DB::table('schedule_user')->where('schedule_id', '=', $request->schedule_id)->get();
 
-        foreach ($ucast as $u){
-            $test[] = DB::table('users')->where('id','=', $u->user_id)->get();
+        foreach ($ucast as $u) {
+            $test[] = DB::table('users')->where('id', '=', $u->user_id)->get();
         }
 
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
             $already = true;
-        }else{
+        } else {
             $already = false;
         }
 
@@ -136,7 +137,7 @@ class ScheduleController extends Controller
 
         $userId = Auth::id();
 
-        return view("event_detail")->with('schedule', $request->schedule_id)->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('text', $text)->with('already',$already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
+        return view("event_detail")->with('schedule', $request->schedule_id)->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('text', $text)->with('already', $already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
     }
 
     public function details($id)
@@ -144,19 +145,19 @@ class ScheduleController extends Controller
 
         $ucast = DB::table('schedule_user')->where('schedule_id', '=', $id)->get();
 
-        foreach ($ucast as $u){
-            $test[] = DB::table('users')->where('id','=', $u->user_id)->get();
+        foreach ($ucast as $u) {
+            $test[] = DB::table('users')->where('id', '=', $u->user_id)->get();
         }
 
-        if (empty($test)){
+        if (empty($test)) {
             $test = [];
         }
 
         $matchThese = ['schedule_id' => $id, 'user_id' => auth()->id()];
-        if(DB::table('schedule_user')->where($matchThese)->exists()) {
+        if (DB::table('schedule_user')->where($matchThese)->exists()) {
             $already = true;
             $ucastnik = DB::table('schedule_user')->where($matchThese)->first();
-        }else{
+        } else {
             $already = false;
             $ucastnik = "neni";
         }
@@ -165,7 +166,7 @@ class ScheduleController extends Controller
 
         $userId = Auth::id();
 
-        return view("event_detail")->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('already',$already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
+        return view("event_detail")->with('details', $details)->with('userId', $userId)->with('ucast', $test)->with('already', $already)->with("ucastni", $ucast)->with('ucastnik', $ucastnik);
     }
 
     public function resize($eventId, Request $request)

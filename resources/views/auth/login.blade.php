@@ -1,8 +1,19 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
 
-    .mobile_login{
+    .mobile_login {
         display: none;
+    }
+
+    .login_button {
+        color: black;
+        background: cyan;
+        transition: all ease-in-out .5s;
+    }
+
+    .login_button:hover {
+        color: cyan;
+        background: #2c2c2c;
     }
 
     @media screen and (max-width: 992px) {
@@ -10,7 +21,7 @@
             display: none;
         }
 
-        .mobile_login{
+        .mobile_login {
             display: block;
         }
 
@@ -25,7 +36,7 @@
     }
 
 </style>
-<main class="login-form" style="height: 100vh;background: #262626;color: red">
+<main class="login-form" style="height: 100vh;background: #262626;color: cyan">
     <div class="cotainer d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="row desktop_login"
              style="background: black;padding: 40px;border-radius: 15px;box-shadow: black 0px 0px 20px 5px">
@@ -54,7 +65,7 @@
                 </div>
 
                 <div class="d-grid mx-auto">
-                    <button type="submit" class="btn btn-dark btn-block">Přihlásit</button>
+                    <button type="submit" class="btn login_button btn-block">Přihlásit</button>
                 </div>
             </form>
         </div>
@@ -85,7 +96,7 @@
                 </div>
 
                 <div class="d-grid mx-auto">
-                    <button type="submit" class="btn btn-dark btn-block" style="font-size: 3rem">Přihlásit</button>
+                    <button type="submit" class="btn login_button btn-block" style="font-size: 3rem;">Přihlásit</button>
                 </div>
             </form>
         </div>
